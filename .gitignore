@@ -13,6 +13,7 @@ vendor/
 
 # logs
 *.log
+build-errors.log
 
 # Compiled binary files
 *.exe
