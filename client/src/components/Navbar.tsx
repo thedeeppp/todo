@@ -22,18 +22,13 @@ export default function Navbar() {
         borderRadius={"5"}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          {/* LEFT SIDE */}
+          {/* CENTERED TODOist */}
           <Flex
+            flex={1}
             justifyContent={"center"}
             alignItems={"center"}
-            gap={3}
-            display={{ base: "none", sm: "flex" }}
           >
-            <Text
-              fontSize={"40"}
-              justifyContent={"center"}
-              alignItems={"center"}
-            >
+            <Text fontSize={"40"} >
               TODOist
             </Text>
           </Flex>
@@ -41,8 +36,8 @@ export default function Navbar() {
           {/* RIGHT SIDE */}
           <Flex alignItems={"center"} gap={3}>
             <Text fontSize={"lg"} fontWeight={500}>
+              Daily Tasks
             </Text>
-            Daily Tasks
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
             </Button>
