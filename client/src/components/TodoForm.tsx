@@ -12,34 +12,28 @@ const TodoForm = () => {
 
 	const { mutate: createTodo, isPending: isCreating } = useMutation({
 		mutationKey: ["createTodo"],
-        _mutationFn: async (e: React.FormEvent) => {
-            e.preventDefault();
-            try {
-                const res = await fetch(BASE_URL + `/todos`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ body: newTodo }),
-                });
-                const data = await res.json();
+		mutationFn: async (e: React.FormEvent) => {
+			e.preventDefault();
+			try {
+				const res = await fetch(BASE_URL + `/todos`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ body: newTodo }),
+				});
+				const data = await res.json();
 
-                if (!res.ok) {
-                    throw new Error(data.error || "Something went wrong");
-                }
+				if (!res.ok) {
+					throw new Error(data.error || "Something went wrong");
+				}
 
-                setNewTodo("");
-                return data;
-            } catch (error: any) {
-                throw new Error(error);
-            }
-        },
-        get mutationFn() {
-            return this._mutationFn;
-        },
-        set mutationFn(value) {
-            this._mutationFn = value;
-        },
+				setNewTodo("");
+				return data;
+			} catch (error: any) {
+				throw new Error(error);
+			}
+		},
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: ["todos"] });
 		},

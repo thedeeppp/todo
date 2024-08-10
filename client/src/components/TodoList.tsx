@@ -51,6 +51,10 @@ const TodoList = () => {
 					<Text fontSize={"xl"} textAlign={"center"} color={"gray.500"}>
 						All tasks completed! 🤞
 					</Text>
+
+					<Text fontSize={"xl"} textAlign={"center"} color={"gray.400"}>
+						Add more tasks and make your day more productive 
+					</Text>
 					<img src='/go.png' alt='Go logo' width={70} height={70} />
 				</Stack>
 			)}
@@ -63,7 +67,7 @@ const TodoList = () => {
 	);
 };
 export default TodoList;
-
+ 
 // STARTER CODE:
 
 // import { Flex, Spinner, Stack, Text } from "@chakra-ui/react";

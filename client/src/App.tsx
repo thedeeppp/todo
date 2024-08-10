@@ -1,4 +1,4 @@
-import * as react from "@chakra-ui/react"
+import { Container, Stack } from "@chakra-ui/react";
 import Navbar from "./components/Navbar"
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
@@ -9,13 +9,13 @@ export const BASE_URL = import.meta.env.MODE === "development" ? "http://localho
 function App() {
 
   return (
-    <react.Stack h="100vh">
+    <Stack h="100vh">
       <Navbar/>
-      <react.Container>
+      <Container>
         <TodoForm/>
         <TodoList/>
-      </react.Container>
-    </react.Stack>
+      </Container>
+    </Stack>
   )
 }
 

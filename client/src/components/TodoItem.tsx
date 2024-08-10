@@ -6,7 +6,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { BASE_URL } from "../App";
 
 const TodoItem = ({ todo }: { todo: Todo }) => {
-	const queryClient = useQueryClient();
+	const queryClient = useQueryClient(); 
 
 	const { mutate: updateTodo, isPending: isUpdating } = useMutation({
 		mutationKey: ["updateTodo"],
